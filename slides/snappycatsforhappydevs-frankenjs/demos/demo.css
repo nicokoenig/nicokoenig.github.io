@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.cat {
+    position: relative;
+    display: inline-block;
+    height: 20vh;
+    width: 20vh;
+    background-size: contain;
+}
+
+/* cat one */
+
+.cat--one {
+    background: url('./cat-pizza.png') center center no-repeat;
+}
+
+.cat--one-animated {
+    animation: cat--one-animated 1s linear 1;
+}
+
+@keyframes cat--one-animated {
+    from {
+        top: 0;
+    }
+    to {
+        top: 80vh;
+    }
+}
+
+/* cat two */
+
+.cat--two {
+    background: url('./cat-present.png') center center no-repeat;
+}
+
+.cat--two-animated {
+    animation: cat--two-animated 1s linear 1;
+}
+
+@keyframes cat--two-animated {
+    from {
+        margin-top: 0;
+    }
+    to {
+        margin-top: 80vh;
+    }
+}
+
+.cat--infinite {
+    animation-iteration-count: infinite;
+}

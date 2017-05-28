@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .cat {
+            position: relative;
+            height: 20vh;
+            width: 20vh;
+            background: url('./cat-unicorn.png') center center no-repeat;
+            background-size: contain;
+        }
+
+        .cat--animated-1 {
+            animation: cat--animated-1 .5s linear 1;
+        }
+
+        @keyframes cat--animated-1 {
+            from {
+                top: 0;
+            }
+            to {
+                top: 80vh;
+            }
+        }
+
+        .cat--animated-2 {
+            animation: cat--animated-2 .5s linear 1;
+        }
+
+        @keyframes cat--animated-2 {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(80vh);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cat"></div>
+</body>
+<script>
+    var Cat = (function () {
+        function Cat() {
+            this.cat = document.querySelector('.cat');
+            this.animationClassName = '';
+            this.cat.addEventListener('animationend', (e) => {
+                if (this.animationClassName) {
+                    e.target.classList.remove(this.animationClassName);
+                    this.animationClassName = '';
+                }
+            });
+        }
+
+        Cat.prototype.addAnimationClass = function (className) {
+            this.cat.classList.add(className);
+            this.animationClassName = className;
+        }
+
+        Cat.prototype.animate1 = function () {
+            this.addAnimationClass('cat--animated-1');
+        };
+
+         Cat.prototype.animate2 = function () {
+            this.addAnimationClass('cat--animated-2');
+        };
+
+        return Cat;
+    })();
+    var cat = new Cat();
+
+</script>
+
+</html>

@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .cat {
+            position: relative;
+            display: inline-block;
+            height: 20vh;
+            width: 20vh;
+            background: url('./cat-cookie.png') center center no-repeat;
+            background-size: contain;
+        }
+
+        .cat--poor-animated {
+            animation: cat--poor-animated 1s linear infinite alternate;
+        }
+
+        @keyframes cat--poor-animated {
+            from {
+                top: 0;
+            }
+            to {
+                top: 80vh;
+            }
+        }
+
+        .cat--super-animated {
+            animation: cat--super-animated 1s linear infinite alternate;
+        }
+
+        @keyframes cat--super-animated {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(80vh);
+            }
+        }
+
+        button {
+            position: fixed;
+            right: 0;
+            top: 0;
+            font-size: 10vmin;
+            margin: 5vmin;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cat cat--poor-animated"></div>
+    <div class="cat cat--super-animated"></div>
+    <button>Break some stuff</button>
+</body>
+<script>
+    
+    // main thread block from https://www.phpied.com/css-animations-off-the-ui-thread/
+    function blockMainThread() {
+        var start = +new Date;
+        while (+new Date - start < 5000) { }
+    }
+
+    var button = document.querySelector('button');
+    button.addEventListener('click', () => {
+        this.blockMainThread();
+    })
+
+</script>
+
+</html>

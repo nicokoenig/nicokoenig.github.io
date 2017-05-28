@@ -1,0 +1,546 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>snappy cats for happy devs</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/snappycats.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section>
+				<h1>Snappy Cats for Happy Devs</h1>
+				<div class="cat-wrapper">
+					<div class="animated-cat-scooter"></div>
+				</div>
+			</section>
+
+			<section>
+
+				<section>
+					<img src="assets/jehova.jpg" class="stretch" alt="">
+				</section>
+
+				<section>
+					<img src="assets/dealwithit.gif" alt="" class="stretch">
+				</section>
+
+			</section>
+
+			<!-- Intro + self advertising -->
+			<section>
+
+				<section>
+					<h1>Self Advertising</h1>
+				</section>
+
+				<section>
+					<p>My name is <a href="https://twitter.com/theNicoKoenig" target="_blank">@theNicoKoenig</a></p>
+					<p>I love css, coffee and <a href="https://www.codepen.io/nicokoenig" target="_blank">codepen</a></p>
+				</section>
+
+				<section>
+					<p>I work at <a href="https://www.esolutions.de/" target="_blank">e.solutions</a></p>
+					<p>We build premium human machine interfaces</p>
+				</section>
+
+				<section>
+					<h2>I made <a href="http://krautipsum.com" target="_blank">Krautipsum</a></h2>
+				</section>
+
+				<section>
+					<p><a href="https://twitter.com/krautipsum" target="_blank">twitter bot <i class="fa fa-twitter"></i></a></p>
+					<p><a href="http://krautipsum.com/api/kraut" target="_blank">web API</a></p>
+					<p><a href="https://marketplace.visualstudio.com/items?itemName=mseckst.kraut-ipsum-filler" target="_blank">vs code extension <i class="fa fa-code"></i></a></p>
+					<p><a href="https://www.npmjs.com/package/kraut" target="_blank">npm package</a></p>
+				</section>
+
+				<section>
+					<img src="assets/oh-mer-gerd-oh-mer-gerd-stickers.jpg" alt="">
+				</section>
+
+			</section>
+
+			<!-- disclaimer -->
+			<section>
+
+				<section>
+					<h1>Disclaimer</h1>
+				</section>
+
+				<section>
+					<img src="assets/highlander-baby-meme.jpg" class="stretch" alt="">
+				</section>
+
+			</section>
+
+			<!-- Quick poll - get to know the audience -->
+			<section>
+
+				<section>
+					<h1>Live Poll</h1>
+				</section>
+
+				<section>
+					<h2>Who is a developer?</h2>
+				</section>
+
+				<section>
+					<h2>Who is a web developer?</h2>
+				</section>
+
+				<section>
+					<h2>Who knows how a browser works?</h2>
+				</section>
+
+				<section>
+					<h2>Who knows what repaint and compositing means?</h2>
+				</section>
+
+			</section>
+
+			<!-- money quote -->
+			<section>
+
+				<section>
+					<img src="assets/moneyquote.jpg" class="stretch" alt="">
+				</section>
+
+				<section>
+					<h2>90% of all web developers don't know, how the browser works.</h2>
+				</section>
+
+				<section>
+					<h2>And that's alright, because they don't need to know.</h2>
+				</section>
+
+				<section>
+					<h2>I didn't care, because there was no need.</h2>
+				</section>
+
+				<section>
+					<h2>How I started to care.</h2>
+				</section>
+
+			</section>
+
+			<section>
+				<h2><a href="demos/demo1.html" target="_blank">Demo Time</a></h2>
+				<p>Dive into timeline</p>
+			</section>
+
+			<section>
+
+				<section>
+					<div class="pipeline">
+						<div class="step step--yellow">Scripting</div>
+						<div class="step step--purple">Style Calculation</div>
+						<div class="step step--purple">Layout</div>
+						<div class="step step--purple">Update Layer Tree</div>
+						<div class="step step--green">Paint</div>
+						<div class="step step--green">Composit Layers</div>
+					</div>
+				</section>
+
+				<section>
+					<a href="https://developers.google.com/web/fundamentals/performance/rendering/" target="_blank">Pixel Pipeline</a>
+				</section>
+
+				<section>
+					All this happens on the browsers main thread
+				</section>
+
+				<section>
+					Is triggered everytime we change css
+				</section>
+
+				<section>
+					An animation is a sequence of css changes
+				</section>
+
+			</section>
+
+			<!-- Frame rate -->
+			<section>
+
+				<section>
+					<h2>60 FPS</h2>
+				</section>
+
+				<section>
+					16.66 ms per frame
+				</section>
+
+				<section>
+					Triggered by v-sync
+				</section>
+
+			</section>
+
+			<!-- Scripting -->
+			<section>
+
+				<section data-background-color="gold">
+					<h1>Scripting</h1>
+				</section>
+
+				<section>
+					<p>Your javascript code (event handlers, callbacks, fancy framework code, ...)</p>
+				</section>
+
+				<section>
+					<p>Use web workers for heavy scripting</p>
+				</section>
+
+				<section>
+					<p>Use requestAnimationFrame for visual changes</p>
+				</section>
+
+				<section>
+					<p>Use requestIdleCallback for non-critial background tasks at the end of a frame</p>
+				</section>
+
+			</section>
+
+			<!-- Rendering -->
+			<section>
+
+				<section data-background-color="MEDIUMPURPLE">
+					<h2>Style calculation</h2>
+				</section>
+
+				<section>
+					<p><i class="fa fa-heart heart-beat"></i></p>
+					<p>Style calculation is tinder for html and css</p>
+				</section>
+
+				<section>
+					<p>Keep your selectors simple</p>
+					<pre><code>// dude - what?
+#foo .bar .baz a { ... }</code></pre>
+				</section>
+
+				<section>
+					<p>Use class centric methodology like <a href="http://getbem.com/" target="_blank">BEM</a></p>
+					<pre><code>.block { ... }
+.block__element { ... }
+.block__element--modifier { ... }</code></pre>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section data-background-color="MEDIUMPURPLE">
+					<h2>Layout</h2>
+				</section>
+
+				<section>
+					Size and position of each element is calculated
+				</section>
+
+				<section>
+					Is scoped in modern browsers
+				</section>
+
+			</section>
+
+			<section>
+
+				<section data-background-color="MEDIUMPURPLE">
+					<h2>Update Layer Tree</h2>
+				</section>
+
+				<section>
+					Create stacking contexts and sorting of elements according to their z-index
+				</section>
+
+				<section>
+					<img src="assets/zindex.jpg" class="stretch" alt="">
+				</section>
+
+			</section>
+
+			<!-- Painting -->
+			<section>
+
+				<section data-background-color="LIGHTGREEN">
+					<h2>Paint</h2>
+				</section>
+
+				<section>
+					Filling in pixels with style and layout information from rendering steps
+				</section>
+
+				<section>
+					Partial painting
+				</section>
+
+			</section>
+
+			<section>
+
+				<section data-background-color="LIGHTGREEN">
+					<h2>Composite Layers</h2>
+				</section>
+
+				<section>
+					Promotion of elements to own layer because of reasons
+				</section>
+
+				<section>
+					Collect layer information and pass it to the compositor thread
+				</section>
+
+			</section>
+
+			<!-- Lets talk about layers-->
+			<section>
+
+				<section>
+					<img src="assets/layers-everywhere.jpg" alt="">
+				</section>
+
+				<section>
+					z-index layer vs compositor layer
+				</section>
+
+				<section>
+					Compositor layer is a painted bitmap image
+				</section>
+
+				<section>
+					Compositor layers are handled on the compositor thread
+				</section>
+
+			</section>
+
+			<section>
+				<img src="assets/boom.gif" class="stretch" alt="">
+			</section>
+
+			<!-- How to optimize? -->
+			<section>
+
+				<section>
+					<h2>How to optimize?</h2>
+				</section>
+
+				<section>
+					<p>"Performance is the art of avoiding work, and making any work you do as efficient as possible. In many cases it's about
+						working with the browser, not against it."</p>
+					<small>from <a href="https://developers.google.com/web/fundamentals/performance/rendering/" target="_blank">developers.google.com</a></small>
+
+				</section>
+
+				<section>
+					<h3>"Performance is the art of avoiding work"</h3>
+				</section>
+
+				<section>
+					<h2>"avoiding work"</h2>
+				</section>
+
+				<section>
+					<img src="assets/confused.gif" alt="" class="stretch">
+				</section>
+
+			</section>
+
+			<!-- Do some live coding? Yes no maybe ... -->
+
+			<!-- Demo Time: Show different animations -->
+			<section>
+				<h2><a href="demos/demo2.html" target="_blank">Demo Time</a></h2>
+				<p>Avoiding work</p>
+			</section>
+
+			<!-- Performance boost and avoiding work -->
+			<section>
+
+				<section>
+					<img src="assets/alf.gif" alt="" class="stretch">
+				</section>
+
+				<section>
+					<h2>10x performance boost</h2>
+				</section>
+
+				<section>
+					<img src="assets/butwhy.gif" alt="" class="stretch">
+				</section>
+
+				<section>
+					<h2>It's <a href="https://csstriggers.com/" target="_blank">easy to animate</a> and even easier to fail.</h2>
+				</section>
+
+				<section>
+					Geometric and layouting properties trigger layout, paint and composite
+				</section>
+
+				<section>
+					<img src="assets/thumbsdown.gif" class="stretch" alt="">
+				</section>
+
+				<section>
+					Visual properties trigger paint and composite
+				</section>
+
+				<section>
+					<img src="assets/ok.gif" class="stretch" alt="">
+				</section>
+
+				<section>
+					Super fantastic properties trigger composite only
+				</section>
+
+				<section>
+					<img src="assets/ohyeah.gif" class="stretch" alt="">
+				</section>
+
+			</section>
+
+			<!-- How to animate snappy? -->
+			<section>
+
+				<section>
+					<h2><a href="demos/demo3.html" target="_blank">Demo Time</a></h2>
+					<p>From janky to snappy cats</p>
+				</section>
+
+			</section>
+
+			<!--
+
+				Do live coding here
+				- show paint flashing
+				- animate with top or margin
+				- animate using 2d transform
+				- point out layers
+				- use translate3d / will-change
+
+			-->
+
+			<!-- translateZ(0) hack vs will-change -->
+			<section>
+				
+				<section>
+					<h2>translate3d vs will-change</h2>
+				</section>
+
+				<section>
+					<p><a href="https://www.w3.org/TR/css-will-change-1/" target="_blank">will-change</a> is the modern version of the good old translate3d hack</p>
+				</section>
+
+				<section>
+					<img src="assets/layeralltheelements.jpg" alt="" class="stretch">
+				</section>
+
+				<section>
+					<p>Mind the vram</p>
+				</section>
+
+				<section>
+					<a href="https://www.chromium.org/developers/design-documents/gpu-accelerated-compositing-in-chrome" target="_blank">Implicit creation</a> of layers
+				</section>
+
+			</section>
+
+			<!-- Perks of the compositor thread -->
+			<section>
+
+				<section>
+					<img src="assets/thinkingblackguy.jpg" alt="" class="stretch">
+				</section>
+
+				<section>
+					<h2><a href="demos/demo4.html" target="_blank">Demo Time</a></h2>
+					Block the main thread
+				</section>
+
+				<section>
+					<img src="assets/thumbsup.gif" alt="" class="stretch">
+				</section>
+
+				<section>
+					<p><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=711645" target="_blank">Chrome bug</a></p>
+					<img src="assets/facepalm.gif" alt="">
+				</section>
+
+			</section>
+
+			<!-- Take aways? -->
+			<section>
+
+				<section>
+					<h2>Take aways</h2>
+				</section>
+
+				<section>
+					Work with the browser, not against it
+				</section>
+
+				<section>
+					<h2>JavaScript</h2>
+					<p>Use requestAnimationFrame, requestIdleCallback and web workers</p>
+				</section>
+
+				<section>
+					<h2>CSS</h2>
+					<p>Use composite properties for animations and transitions</p>
+				</section>
+
+			</section>
+
+			<!-- thx bye :) -->
+			<section>
+				<div class="fragment">
+					<p>kkthxbye</p>
+					<img src="assets/micdrop.gif" alt="">
+				</div>
+			</section>
+
+
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
+</html>

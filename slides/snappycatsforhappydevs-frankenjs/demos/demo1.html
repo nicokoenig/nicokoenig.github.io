@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .cat {
+            position: relative;
+            height: 20vh;
+            width: 20vh;
+            background: url('./cat-pizza.png') center center no-repeat;
+            background-size: contain;
+        }
+
+        .cat--animated {
+            animation: cat--animated .5s linear 1;
+        }
+
+        @keyframes cat--animated {
+            from {
+                top: 0;
+            }
+            to {
+                top: 80vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cat"></div>
+</body>
+<script>
+    var Cat = (function () {
+        function Cat() {
+            this.cat = document.querySelector('.cat');
+            this.animationClassName = '';
+            this.cat.addEventListener('animationend', (e) => {
+                if (this.animationClassName) {
+                    e.target.classList.remove(this.animationClassName);
+                    this.animationClassName = '';
+                }
+            });
+        }
+
+        Cat.prototype.addAnimationClass = function (className) {
+            this.cat.classList.add(className);
+            this.animationClassName = className;
+        }
+
+        Cat.prototype.animate = function () {
+            this.addAnimationClass('cat--animated');
+        };
+
+        return Cat;
+    })();
+    var cat = new Cat();
+
+</script>
+
+</html>
